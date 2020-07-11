@@ -21,7 +21,7 @@ mvn clean install
 ```
 
 ## How to run
-To start the spring boot application run the command below, the HTTP server will be listening on port 8080
+To start the spring boot application run the command below, the HTTP server will be listening to port 8080
 ```
 java -jar target/dialogs-0.0.1-SNAPSHOT.jar
 ```
