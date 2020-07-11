@@ -83,7 +83,7 @@
                         </goals>
                         <configuration>
                             <dataFile>target/jacoco.exec</dataFile>
-                            <outputDirectory>target/my-reports</outputDirectory>
+                            <outputDirectory>target/coverage-reports</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>

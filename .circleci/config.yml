@@ -34,5 +34,8 @@ jobs:
           path: test-results
       
       - store_artifacts:
+          path: target/coverage-reports
+          
+      - store_artifacts:
           path: target/dialogs-0.0.1-SNAPSHOT.jar
 
