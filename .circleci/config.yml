@@ -23,8 +23,15 @@ jobs:
       
       - run: mvn package
       
-      - store_test_results:
-          path: target/surefire-reports
+      - run:
+          name: Save test results
+          command: |
+            mkdir -p ~/test-results
+            find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} ~/test-results/ \;
+          when: always
+
+      - store_artifacts:
+          path: test-results
       
       - store_artifacts:
           path: target/dialogs-0.0.1-SNAPSHOT.jar
