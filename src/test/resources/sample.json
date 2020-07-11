@@ -1,0 +1,29 @@
+[
+{
+    "id": 1901,
+    "name": "Company name",
+    "signedUp": "2018-07-04T20:21:18",
+    "dialogs": [
+      {
+        "id": 1405,
+        "number": 1505,
+        "userId": 322,
+        "from": "somebody@mail.com",
+        "received": "2019-08-04T13:52:22",
+        "threads": [
+          {
+            "id": 4726,
+            "conversationId": 350,
+            "payload": "Hello world"
+          }
+        ]
+      }
+    ]
+  },{
+    "id": 1200,
+    "name": "Another Company name",
+    "signedUp": "2017-09-09T22:25:18",
+    "dialogs" : []
+  }
+]
+
