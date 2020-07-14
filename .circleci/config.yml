@@ -24,18 +24,27 @@ jobs:
       - run: mvn package
       
       - run:
-          name: Save test results
+          name: Copy the test results
           command: |
             mkdir -p test-results
             find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} test-results/ \;
           when: always
+
+      - setup_remote_docker:
+
+      - run: 
+          name: Build and publish Docker image
+          command: |
+            docker build -t mdabreu/spring-boot-rest-api:$CIRCLE_BRANCH .
+            echo "$DOCKERHUB_PASS" | docker login --username "$DOCKERHUB_USERNAME" --password-stdin
+            docker push mdabreu/spring-boot-rest-api:$CIRCLE_BRANCH 
 
       - store_artifacts:
           path: test-results
       
       - store_artifacts:
           path: target/coverage-reports
-          
+
       - store_artifacts:
           path: target/dialogs-0.0.1-SNAPSHOT.jar
 
